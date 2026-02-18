@@ -1,0 +1,16 @@
+# Mobile Responsive Component
+
+## Rules
+- **Never change desktop layout** — all edits must be inside mobile breakpoints only (`sm:` and below, or before `md:`)
+- Use `md:` as the breakpoint boundary — everything before it is mobile, everything at `md:` and above preserves the current design
+- Do not remove or rename any existing Tailwind classes — only prepend mobile variants or add new mobile-first classes alongside them
+- Fixed widths (e.g. `w-[1440px]`) should become `w-full` on mobile with `md:w-[1440px]`
+- Horizontal layouts (`flex-row`, `grid-cols-N`) should stack on mobile: `flex-col md:flex-row`
+- Overflow or clipped content on mobile: reduce padding, font size, or gap using mobile prefix classes
+- Hidden elements on mobile use `hidden md:block` — visible-only-mobile use `block md:hidden`
+- Font sizes and spacing: scale down with mobile classes, keep original value at `md:`
+
+## Approach
+1. View the component at mobile width and identify what breaks or overflows
+2. Add mobile-prefixed classes to fix each issue — do not touch the unprefixed (desktop) classes
+3. Test that desktop view is pixel-identical before and after
