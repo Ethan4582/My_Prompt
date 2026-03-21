@@ -1,0 +1,3 @@
+pnpm add gsap framer-motion @studio-freight/lenis
+
+pnpm add -D @types/gsap
